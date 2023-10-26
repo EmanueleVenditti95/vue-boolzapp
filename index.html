@@ -42,10 +42,11 @@
                 </div>
                 
                 <div class="col-grow">
-                    <div class="contact">
-                        <img class="contact__pic" src="./img/avatar_1.jpg " alt="">
+                    <div class="contact"
+                    v-for="(contact,index) in contacts ">
+                        <img class="contact__pic" :src="contact.avatar" alt="">
                         <div class="contact__info">
-                            <h4>Michele</h4>
+                            <h4>{{ contact.name }}</h4>
                                 <div class="contact__last-message">
                                     <p class="col-grow">Ultimo messaggio inviato</p>
                                     <p class="contact__clock">12:00</p>
