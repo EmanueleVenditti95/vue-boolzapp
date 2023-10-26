@@ -6,18 +6,29 @@
     <title>Boolzap</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://kit.fontawesome.com/a095a4bfbe.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="app" class="container-big">
         <div class="top-bar"></div>
         <div class="container-main">
-            <div class="col-4 debug left-side ">
-                <div class="col-1 debug"></div>
+            <div class="col-4 debug aside ">
+                <div class="col-1 user-bar">
+                    <div class="user-info">
+                        <img class="user-pic" src="./img/avatar_7.jpg" alt="">
+                        <h4>Emanuele</h4>
+                    </div>
+                    <div class="tools">
+                        <i class="fa-solid fa-rotate-right tools__icon"></i>
+                        <i class="fa-solid fa-message tools__icon"></i>
+                        <i class="fa-solid fa-ellipsis-vertical tools__icon"></i>
+                    </div>
+                </div>
                 <div class="col-1 debug"></div>
                 <div class="col-1 debug"></div>
                 <div class="col-grow debug"></div>
             </div>
-            <div class="col-grow debug right-side">
+            <div class="col-grow debug chat-side">
                 <div class="col-1 debug"></div>
                 <div class="col-grow debug"></div>
                 <div class="col-1 debug"></div>

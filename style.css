@@ -2,10 +2,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Verdana, sans-serif;
 }
 
 .debug {
     border: 1px solid black;
+}
+
+.img {
+    max-width: 100%;
 }
 
 /* COLOR PALETTE */
@@ -45,7 +50,7 @@
     display: flex;
 }
 
-.left-side, .right-side {
+.aside, .chat-side {
     display: flex;
     flex-direction: column;
 }
@@ -60,4 +65,34 @@
 
 .col-grow {
     flex-grow: 1;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-bar {
+    background-color: var(--light-gray);
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-pic {
+    width: 50px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    margin: 0 10px;
+}
+
+.tools {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.tools__icon {
+    margin:0 10px;
+    font-size: 20px;
+    color: var(--dark--gray);
 }
