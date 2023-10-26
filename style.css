@@ -32,7 +32,7 @@
 }
 
 .top-bar {
-    height: 100px;
+    height: 15%;
     width: 100%;
     background-color: var(--dark-green);
     position: absolute;
@@ -176,4 +176,29 @@
     position: absolute;
     right: 10px;
     top: 10px;
+}
+
+.chat-side {
+    border-left: 1px solid var(--gray);
+}
+
+.chat-box {
+    background-image: url(./img/mine.jpg);
+}
+
+.chat-info-bar, 
+.send-message-bar {
+    background-color: var(--light-gray);
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.chat-info-bar {
+    justify-content: space-between;
+}
+
+.chat-info-contact {
+    display: flex;
+    align-items: center;
 }
