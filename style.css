@@ -227,3 +227,42 @@
     color: var(--black);
     font-size: 20px;
 }
+
+.chat-box__container {
+    max-width: 80%;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.message-line {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.message {
+    line-height: 50px;
+    font-size: 12px;
+    display: flex;
+    width: 40%;
+    border-radius: 10px;
+    justify-content: flex-start;
+    padding: 0 15px;
+    margin-top: 10px;
+    position: relative;
+}
+
+.user-message {
+    background-color: var(--light-green);    
+}
+
+.contact-message {
+    background-color: var(--light);
+}
+
+.message__time {
+    position: absolute;
+    bottom: -15px;
+    right: 7px;
+    font-size: 8px;
+    color: var(--dark--gray);
+}
