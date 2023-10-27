@@ -43,7 +43,9 @@
                 
                 <div class="col-grow contact-list">
                     <div class="contact"
-                    v-for="(contact,index) in contacts " :key="index">
+                    v-for="(contact,index) in contacts " :key="index"
+                    @click="changeIndex(index)"
+                    :class="index === currentIndex ? 'active' : ''" >
                         <img class="contact__pic" :src="contact.avatar" alt="">
                         <div class="contact__info">
                             <h4>{{ contact.name }}</h4>
@@ -78,7 +80,7 @@
                 <div class="col-grow chat-box">
                     <div class="chat-box__container">
                         <div :class="messageObj.status === 'sent' ? 'message-line' : 'message-line-contact' "
-                        v-for="messageObj in contacts[currentIndex].messages">
+                        v-for="(messageObj,messageIndex) in contacts[currentIndex].messages" :key="messageIndex">
                             <div class="message" :class="messageObj.status === 'sent' ? 'user-message' : 'contact-message' ">
                                 <p>{{ messageObj.message }}</p>
                                 <p class="message__time">15:30</p>

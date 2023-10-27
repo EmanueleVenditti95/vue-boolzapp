@@ -166,7 +166,8 @@
     overflow-y: auto;
 }
 
-.contact:hover {
+.contact:hover,
+.active {
     background-color: var(--gray);
 }
 

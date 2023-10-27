@@ -169,8 +169,10 @@ const { createApp } = Vue;
           ]
       }
     },
-    method: {
-
+    methods: {
+      changeIndex(index) {
+        this.currentIndex = index
+      }
     },
     mounted () {
         console.log('vue ok')
