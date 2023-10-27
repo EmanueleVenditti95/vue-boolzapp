@@ -40,13 +40,13 @@
 }
 
 .container-main {
-    height: 90%;
-    width: 80%;
+    height: 95vh;
+    max-width: 1500px;
     margin: 0 auto;
     background-color: var(--light);
     position: relative;
     z-index: 1;
-    top: 5%;
+    top: 2.5vh;
     display: flex;
 }
 
@@ -162,6 +162,10 @@
     position: relative;
 }
 
+.contact-list {
+    overflow-y: auto;
+}
+
 .contact:hover {
     background-color: var(--gray);
 }
@@ -239,11 +243,16 @@
     justify-content: flex-end;
 }
 
+.message-line-contact {
+    display: flex;
+    justify-content: flex-start;
+}
+
 .message {
     line-height: 50px;
     font-size: 12px;
     display: flex;
-    width: 40%;
+    max-width: 80%;
     border-radius: 10px;
     justify-content: flex-start;
     padding: 0 15px;

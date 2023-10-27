@@ -41,9 +41,9 @@
                     <input class="searchbar__input" type="text" placeholder="Cerca o inizia una chat">
                 </div>
                 
-                <div class="col-grow">
+                <div class="col-grow contact-list">
                     <div class="contact"
-                    v-for="(contact,index) in contacts ">
+                    v-for="(contact,index) in contacts " :key="index">
                         <img class="contact__pic" :src="contact.avatar" alt="">
                         <div class="contact__info">
                             <h4>{{ contact.name }}</h4>
@@ -91,10 +91,13 @@
                             </div>
                         </div>
                         
-                        <div class="message contact-message">
-                            <p>Tutto fatto!</p>
-                            <p class="message__time">15:30</p>
-                        </div>
+                         <div class="message-line-contact">
+                            <div class="message contact-message">
+                                <p>Tutto fatto!</p>
+                                <p class="message__time">15:30</p>
+                            </div>
+                         </div>   
+
                     </div>                    
                 </div>
 
