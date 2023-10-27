@@ -77,28 +77,13 @@
 
                 <div class="col-grow chat-box">
                     <div class="chat-box__container">
-                        <div class="message-line"
-                        v-for="message in contacts[currentIndex].messages">
-                            <div class="message user-message">
-                                <p>{{ message.message }}</p>
+                        <div :class="messageObj.status === 'sent' ? 'message-line' : 'message-line-contact' "
+                        v-for="messageObj in contacts[currentIndex].messages">
+                            <div class="message" :class="messageObj.status === 'sent' ? 'user-message' : 'contact-message' ">
+                                <p>{{ messageObj.message }}</p>
                                 <p class="message__time">15:30</p>
                             </div>
                         </div>
-
-                        <!-- <div class="message-line">
-                            <div class="message user-message">
-                                <p>Ricordati di stendere i panni</p>
-                                <p class="message__time">15:30</p>
-                            </div>
-                        </div>
-                        
-                         <div class="message-line-contact">
-                            <div class="message contact-message">
-                                <p>Tutto fatto!</p>
-                                <p class="message__time">15:30</p>
-                            </div>
-                         </div>    -->
-
                     </div>                    
                 </div>
 
