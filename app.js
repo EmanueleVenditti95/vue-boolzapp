@@ -4,6 +4,7 @@ const { createApp } = Vue;
     data() {
       return {
         currentIndex : 0,
+        newMessage : '',
         contacts: [
           {
           name: 'Michele',
@@ -171,10 +172,22 @@ const { createApp } = Vue;
     },
     methods: {
       changeIndex(index) {
-        this.currentIndex = index
+        this.currentIndex = index;
+      },
+
+      insertNewMessage(text) {
+        const newMessageObj = {
+          date : '15:30',
+          message : text,
+          status: 'sent'
+        }
+        this.newMessage = '';
+        if (text !== '') {
+          this.contacts[this.currentIndex].messages.push(newMessageObj)
+        }        
       }
     },
     mounted () {
-        console.log('vue ok')
+        console.log('vue ok');
     }
-  }).mount('#app')
+  }).mount('#app');
