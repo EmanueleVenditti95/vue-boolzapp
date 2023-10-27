@@ -178,13 +178,24 @@ const { createApp } = Vue;
       insertNewMessage(text) {
         const newMessageObj = {
           date : '15:30',
-          message : text,
+          message : text.trim(),
           status: 'sent'
         }
         this.newMessage = '';
         if (text !== '') {
-          this.contacts[this.currentIndex].messages.push(newMessageObj)
-        }        
+          this.contacts[this.currentIndex].messages.push(newMessageObj);
+        } 
+      },
+
+      automaticAnswer(){
+        setTimeout(() => {
+          const newMessageObj = {
+            date : '15:30',
+            message : 'Ok',
+            status: 'received'
+          }
+          this.contacts[this.currentIndex].messages.push(newMessageObj);
+        }, 1000)
       }
     },
     mounted () {

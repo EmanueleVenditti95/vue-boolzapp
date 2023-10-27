@@ -93,7 +93,7 @@
                     <div class="col-1 send-message-bar__icon"><i class="fa-regular fa-face-smile"></i></div>
                     <input class="col-grow send-message-input" type="text" placeholder="Scrivi un messaggio"
                         v-model="newMessage"
-                        @keyup.enter="insertNewMessage(newMessage)">
+                        @keyup.enter="insertNewMessage(newMessage),automaticAnswer()">
                     <div class="col-1 send-message-bar__icon"><i class="fa-solid fa-microphone"></i></div>
                 </div>
             </div>
