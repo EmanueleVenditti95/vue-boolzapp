@@ -61,9 +61,9 @@
                 <div class="col-1">
                     <div class="chat-info-bar">
                         <div class="chat-info-contact">
-                            <img class="user-pic" src="./img/avatar_1.jpg" alt="">
+                            <img class="user-pic" :src="contacts[currentIndex].avatar" alt="">
                             <div>
-                                <h4>Michele</h4>
+                                <h4>{{ contacts[currentIndex].name }}</h4>
                                 <p class="contact__last-message">Ultimo accesso oggi alle 12:00</p>
                             </div>
                         </div>
@@ -77,14 +77,15 @@
 
                 <div class="col-grow chat-box">
                     <div class="chat-box__container">
-                        <div class="message-line">
+                        <div class="message-line"
+                        v-for="message in contacts[currentIndex].messages">
                             <div class="message user-message">
-                                <p>Hai portato a spasso il cane?</p>
+                                <p>{{ message.message }}</p>
                                 <p class="message__time">15:30</p>
                             </div>
                         </div>
 
-                        <div class="message-line">
+                        <!-- <div class="message-line">
                             <div class="message user-message">
                                 <p>Ricordati di stendere i panni</p>
                                 <p class="message__time">15:30</p>
@@ -96,7 +97,7 @@
                                 <p>Tutto fatto!</p>
                                 <p class="message__time">15:30</p>
                             </div>
-                         </div>   
+                         </div>    -->
 
                     </div>                    
                 </div>
