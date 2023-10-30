@@ -3,7 +3,10 @@ const { createApp } = Vue;
   createApp({
     data() {
       return {
+        isActive : false,
+        dateTime : luxon.DateTime,
         currentIndex : 0,
+        currentMessageIndex : -1,
         newMessage : '',
         inputSearchContact: '',
         contacts: [
@@ -190,25 +193,37 @@ const { createApp } = Vue;
 
       automaticAnswer(){
         setTimeout(() => {
-          const newMessageObj = {
+          const automaticMessageObj = {
             date : '15:30',
             message : 'Ok',
             status: 'received'
           }
-          this.contacts[this.currentIndex].messages.push(newMessageObj);
+          this.contacts[this.currentIndex].messages.push(automaticMessageObj);
         }, 1000)
       },
 
       isLettersIncluded() {
-        for (let i=0;i<this.contacts.length;i++){
+        for (let i = 0 ; i < this.contacts.length ; i++){
           const currentContact = this.contacts[i].name.toLowerCase()
-          
+
           if (currentContact.includes(this.inputSearchContact.trim())){
             this.contacts[i].visible = true;
           }else {
             this.contacts[i].visible = false;
           }
         }
+      },
+
+      changeActive () {
+        this.isActive = !this.isActive;
+      },
+
+      changeMessageIndex (index) {
+        this.currentMessageIndex = index;
+      },
+
+      removeCurrentMessage (index) {
+        this.contacts[this.currentIndex].messages.splice(index,1);
       }
     },
     mounted () {

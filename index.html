@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://kit.fontawesome.com/a095a4bfbe.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.3/build/global/luxon.min.js"></script>
 </head>
 <body>
     <div id="app" class="container-big">
@@ -84,9 +85,15 @@
                     <div class="chat-box__container">
                         <div :class="messageObj.status === 'sent' ? 'message-line' : 'message-line-contact' "
                         v-for="(messageObj,messageIndex) in contacts[currentIndex].messages" :key="messageIndex">
-                            <div class="message" :class="messageObj.status === 'sent' ? 'user-message' : 'contact-message' ">
+                            <div class="message" :class="messageObj.status === 'sent' ? 'user-message' : 'contact-message'"
+                            @click="changeMessageIndex (messageIndex),changeActive()">
                                 <p>{{ messageObj.message }}</p>
-                                <p class="message__time">15:30</p>
+                                <p class="message__time">{{ messageObj.date }}</p>
+                                <p class="delete-message" :class="isActive &&
+                                 currentMessageIndex === messageIndex && 
+                                 messageObj.status === 'sent' ? '' : 'invisible'"
+                                 @click="removeCurrentMessage(messageIndex)"
+                                >Delete message</p>
                             </div>
                         </div>
                     </div>                    

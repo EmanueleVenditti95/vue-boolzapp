@@ -41,7 +41,7 @@
 
 .container-main {
     height: 95vh;
-    max-width: 1500px;
+    max-width: 1400px;
     margin: 0 auto;
     background-color: var(--light);
     position: relative;
@@ -274,8 +274,20 @@
     position: relative;
 }
 
+.delete-message {
+    position: absolute;
+    z-index: 1;
+    background-color: var(--light);
+    width: 150px;
+    text-align: center;
+    border-radius: 5px;
+    top: 35px;
+    right: 15px;
+}
+
 .user-message {
-    background-color: var(--light-green);    
+    background-color: var(--light-green); 
+    cursor: pointer;   
 }
 
 .contact-message {
