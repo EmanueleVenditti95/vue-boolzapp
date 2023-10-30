@@ -80,7 +80,7 @@
                     </div>
                 </div>
 
-                <div class="col-grow chat-box">
+                <div class="col-10 chat-box">
                     <div class="chat-box__container">
                         <div :class="messageObj.status === 'sent' ? 'message-line' : 'message-line-contact' "
                         v-for="(messageObj,messageIndex) in contacts[currentIndex].messages" :key="messageIndex">

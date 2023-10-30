@@ -67,6 +67,10 @@
     flex-basis: calc(100% / 3);
 }
 
+.col-10{
+    flex-basis: calc((100% / 12)*10);
+}
+
 .col-grow {
     flex-grow: 1;
 }
@@ -198,6 +202,7 @@
 
 .chat-box {
     background-image: url(./img/mine.jpg);
+    overflow-y: auto;
 }
 
 .chat-info-bar, 
@@ -206,6 +211,10 @@
     display: flex;
     align-items: center;
     height: 100%;
+}
+
+.send-message-bar {
+    min-height: 60px;
 }
 
 .chat-info-bar {
