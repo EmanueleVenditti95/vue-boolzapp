@@ -38,14 +38,17 @@
 
                 <div class="col searchbar">
                     <button class="searchbar__button"><i class="fa-solid fa-magnifying-glass"></i></button>
-                    <input class="searchbar__input" type="text" placeholder="Cerca o inizia una chat">
+                    <input class="searchbar__input" type="text" placeholder="Cerca o inizia una chat"
+                    v-model="inputSearchContact"
+                    @keyup.enter="isLettersIncluded()" >
                 </div>
                 
                 <div class="col-grow contact-list">
                     <div class="contact"
                     v-for="(contact,index) in contacts " :key="index"
                     @click="changeIndex(index)"
-                    :class="index === currentIndex ? 'active' : ''" >
+                    :class="index === currentIndex ? 'active' : '',
+                            contact.visible ? '' : 'invisible' " >
                         <img class="contact__pic" :src="contact.avatar" alt="">
                         <div class="contact__info">
                             <h4>{{ contact.name }}</h4>

@@ -5,6 +5,7 @@ const { createApp } = Vue;
       return {
         currentIndex : 0,
         newMessage : '',
+        inputSearchContact: 'el',
         contacts: [
           {
           name: 'Michele',
@@ -196,9 +197,18 @@ const { createApp } = Vue;
           }
           this.contacts[this.currentIndex].messages.push(newMessageObj);
         }, 1000)
+      },
+
+      isLettersIncluded() {
+        for (let i=0;i<this.contacts.length;i++){
+          if (this.contacts[i].name.includes(this.inputSearchContact)){
+            this.contacts[i].visible = true;
+          }else {
+            this.contacts[i].visible = false;
+          }
+        }
       }
     },
     mounted () {
-        console.log('vue ok');
     }
   }).mount('#app');
