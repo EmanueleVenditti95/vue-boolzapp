@@ -40,7 +40,7 @@
                     <button class="searchbar__button"><i class="fa-solid fa-magnifying-glass"></i></button>
                     <input class="searchbar__input" type="text" placeholder="Cerca o inizia una chat"
                     v-model="inputSearchContact"
-                    @keyup.enter="isLettersIncluded()" >
+                    @keyup="isLettersIncluded()">
                 </div>
                 
                 <div class="col-grow contact-list">

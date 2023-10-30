@@ -5,7 +5,7 @@ const { createApp } = Vue;
       return {
         currentIndex : 0,
         newMessage : '',
-        inputSearchContact: 'el',
+        inputSearchContact: '',
         contacts: [
           {
           name: 'Michele',
@@ -201,7 +201,9 @@ const { createApp } = Vue;
 
       isLettersIncluded() {
         for (let i=0;i<this.contacts.length;i++){
-          if (this.contacts[i].name.includes(this.inputSearchContact)){
+          const currentContact = this.contacts[i].name.toLowerCase()
+          
+          if (currentContact.includes(this.inputSearchContact.trim())){
             this.contacts[i].visible = true;
           }else {
             this.contacts[i].visible = false;
