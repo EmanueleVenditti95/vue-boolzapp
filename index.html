@@ -55,8 +55,12 @@
                         <div class="contact__info">
                             <h4>{{ contact.name }}</h4>
                                 <div class="contact__last-message">
-                                    <p class="col-grow">Ultimo messaggio inviato</p>
-                                    <p class="contact__clock">12:00</p>
+                                    <p class="col-grow">
+                                        {{ contact.messages[contact.messages.length-1].message }}
+                                    </p>
+                                    <p class="contact__clock">
+                                        {{ getHourAndMinute(contact.messages[contact.messages.length-1].date) }}
+                                    </p>
                                 </div>
                         </div>
                     </div>
