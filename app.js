@@ -4,7 +4,7 @@ const { createApp } = Vue;
     data() {
       return {
         isActive : false,
-        dateTime : luxon.DateTime,
+        dateTime : luxon.DateTime.now().toFormat('dd/MM/yy HH:mm:ss'),
         currentIndex : 0,
         currentMessageIndex : -1,
         newMessage : '',
@@ -180,21 +180,23 @@ const { createApp } = Vue;
       },
 
       insertNewMessage(text) {
+        text = text.trim()
         const newMessageObj = {
-          date : '15:30',
-          message : text.trim(),
+          date : this.dateTime,
+          message : text,
           status: 'sent'
         }
         this.newMessage = '';
         if (text !== '') {
           this.contacts[this.currentIndex].messages.push(newMessageObj);
-        } 
+          this.automaticAnswer();
+        }
       },
 
       automaticAnswer(){
         setTimeout(() => {
           const automaticMessageObj = {
-            date : '15:30',
+            date : this.dateTime,
             message : 'Ok',
             status: 'received'
           }
@@ -212,6 +214,12 @@ const { createApp } = Vue;
             this.contacts[i].visible = false;
           }
         }
+      },
+
+      getHourAndMinute(date) {
+        const [datePart, timePart] = date.split(' ');
+        const [hour, minute] = timePart.split(':');
+        return `${hour}:${minute}`;
       },
 
       changeActive () {
